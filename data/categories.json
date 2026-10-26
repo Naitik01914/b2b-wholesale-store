@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "slug": "electronics",
+    "icon": "bi-tv",
+    "count": 5,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/5.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Home & Kitchen",
+    "slug": "home-kitchen",
+    "icon": "bi-house-heart",
+    "count": 4,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/21.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1584990347449-a2924294a2fa?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Fashion & Apparel",
+    "slug": "fashion-apparel",
+    "icon": "bi-bag-check",
+    "count": 3,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/18.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Beauty & Personal Care",
+    "slug": "beauty-personal-care",
+    "icon": "bi-droplet-half",
+    "count": 2,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/20.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1608248597359-3e3c23d40131?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Industrial Supplies",
+    "slug": "industrial-supplies",
+    "icon": "bi-tools",
+    "count": 1,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/15.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Office Supplies",
+    "slug": "office-supplies",
+    "icon": "bi-briefcase",
+    "count": 2,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/16.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1580481077195-c9998379294a?w=600&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Outdoor & Drinkware",
+    "slug": "outdoor-drinkware",
+    "icon": "bi-cup-straw",
+    "count": 1,
+    "image": "https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/1.jpg",
+    "fallbackImage": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&auto=format&fit=crop&q=80"
+  }
+]

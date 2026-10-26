@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout â€” B2B Wholesale</title>
+  <meta name="description"
+    content="Complete your wholesale purchase with secure B2B ordering and trade assurance.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar (Single Clean Header like Home Page) -->
+  <nav class="nav-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%230f172a\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo">
+        </a>
+
+        <!-- Center: Desktop Menu Links -->
+        <ul class="nav-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="electronics.html">Electronics</a></li>
+          <li><a href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Right: Profile & Cart Actions -->
+        <div class="header-actions">
+          <a href="contact.html" class="header-action-btn d-none d-sm-flex" title="Customer Account">
+            <i class="bi bi-person"></i>
+            <!-- <span class="d-none d-xl-inline">Account</span> -->
+          </a>
+          <button class="header-action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+            <span class="cart-icon-wrap">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge" style="display: none;">0</span>
+            </span>
+            <!-- <span class="d-none d-xl-inline">Your Cart</span> -->
+            <span class="cart-header-amount" style="display: none;"></span>
+          </button>
+          <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mobileNav">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Collapsible Menu -->
+      <div class="collapse d-lg-none py-3 border-top" id="mobileNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="electronics.html">Electronics</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Checkout Main Page -->
+  <main class="checkout-page-section">
+    <div class="container">
+
+      <!-- Centered Title & Breadcrumb (ThemeHunk exact) -->
+      <div class="text-center mb-4">
+        <h1 class="checkout-main-title">Checkout</h1>
+        <div class="checkout-breadcrumb">
+          <a href="index.html">Home</a> <span class="mx-1">/</span> <span class="text-dark fw-medium">Checkout</span>
+        </div>
+      </div>
+
+      <!-- 2-Column Checkout Layout -->
+      <form id="checkoutForm" onsubmit="handlePlaceOrder(event)">
+        <div class="row g-5">
+
+          <!-- Left Column: Checkout Form -->
+          <div class="col-lg-7">
+
+            <!-- Section 1: Contact Information -->
+            <div class="checkout-section mb-4">
+              <h4 class="checkout-section-title">Contact information</h4>
+              <div class="mb-2">
+                <input type="email" class="form-control checkout-input" id="checkoutEmail"
+                  placeholder="Email address" required>
+              </div>
+              <p class="checkout-guest-note">You are currently checking out as a guest.</p>
+            </div>
+
+            <!-- Section 2: Billing Address -->
+            <div class="checkout-section mb-4">
+              <h4 class="checkout-section-title">Billing address</h4>
+
+              <div class="mb-3">
+                <label class="checkout-floating-lbl">Country/Region</label>
+                <select class="form-select checkout-select" id="checkoutCountry">
+                  <option value="India" selected>India</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Germany">Germany</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control checkout-input" placeholder="First name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control checkout-input" placeholder="Last name" required>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <input type="text" class="form-control checkout-input" placeholder="Address" required>
+              </div>
+
+              <div class="mb-3">
+                <a href="javascript:void(0)" class="text-decoration-none small text-dark fw-semibold"
+                  onclick="document.getElementById('aptField').classList.toggle('d-none')">+ Add apartment, suite, etc.</a>
+                <input type="text" id="aptField" class="form-control checkout-input d-none mt-2"
+                  placeholder="Apartment, suite, unit, etc. (optional)">
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control checkout-input" placeholder="City" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select checkout-select">
+                    <option value="Madhya Pradesh" selected>Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <input type="text" class="form-control checkout-input" placeholder="PIN Code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control checkout-input" placeholder="Phone (optional)">
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Payment Options -->
+            <div class="checkout-section mb-4">
+              <h4 class="checkout-section-title">Payment options</h4>
+
+              <!-- Interactive Payment Methods List -->
+              <div class="payment-methods-list" id="paymentMethodsList">
+
+                <!-- 1. Direct Bank Transfer (Default for B2B Wholesale) -->
+                <div class="payment-method-card active" onclick="selectPaymentMethod('bank')">
+                  <div class="payment-method-header">
+                    <div class="payment-method-title-wrap">
+                      <input class="payment-method-radio" type="radio" name="paymentOption" id="payBankRadio" value="bank" checked>
+                      <div>
+                        <h6 class="payment-method-name">
+                          <i class="bi bi-bank text-warning me-1"></i> Direct Bank Transfer (NEFT / RTGS / IMPS)
+                        </h6>
+                        <p class="payment-method-desc">Pay directly into our corporate wholesale bank account.</p>
+                      </div>
+                    </div>
+                    <div class="payment-method-icons">
+                      <span class="badge bg-light text-dark border">B2B Verified</span>
+                    </div>
+                  </div>
+                  <div class="payment-details-panel">
+                    <p class="mb-2 text-muted small">Make your payment directly into our corporate bank account. Please use your Order ID as reference. Goods dispatch immediately after funds clear.</p>
+                    <div class="bank-info-grid">
+                      <div class="bank-info-item">
+                        <span>Bank Name</span>
+                        <span>HDFC Bank</span>
+                      </div>
+                      <div class="bank-info-item">
+                        <span>Account Name</span>
+                        <span>B2B Wholesale Trade Pvt Ltd</span>
+                      </div>
+                      <div class="bank-info-item">
+                        <span>Account Number</span>
+                        <span>50200084920194</span>
+                      </div>
+                      <div class="bank-info-item">
+                        <span>IFSC Code</span>
+                        <span>HDFC0001244</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. UPI / QR Code / Net Banking -->
+                <div class="payment-method-card" onclick="selectPaymentMethod('upi')">
+                  <div class="payment-method-header">
+                    <div class="payment-method-title-wrap">
+                      <input class="payment-method-radio" type="radio" name="paymentOption" id="payUpiRadio" value="upi">
+                      <div>
+                        <h6 class="payment-method-name">
+                          <i class="bi bi-qr-code-scan text-success me-1"></i> UPI / QR Code / Net Banking
+                        </h6>
+                        <p class="payment-method-desc">Instant zero-fee payment via Google Pay, PhonePe, Paytm, or BHIM.</p>
+                      </div>
+                    </div>
+                    <div class="payment-method-icons">
+                      <span class="badge bg-success-subtle text-success border border-success-subtle">Instant</span>
+                    </div>
+                  </div>
+                  <div class="payment-details-panel">
+                    <div class="upi-info-box d-flex align-items-center justify-content-between">
+                      <div>
+                        <strong class="d-block text-dark">Corporate UPI ID:</strong>
+                        <code class="fs-6 text-success fw-bold">b2bwholesale@hdfcbank</code>
+                        <div class="small text-muted mt-1">Scan or transfer using your favorite UPI app. Instant receipt confirmation.</div>
+                      </div>
+                      <i class="bi bi-shield-check display-6 text-success"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Credit / Debit Card -->
+                <div class="payment-method-card" onclick="selectPaymentMethod('card')">
+                  <div class="payment-method-header">
+                    <div class="payment-method-title-wrap">
+                      <input class="payment-method-radio" type="radio" name="paymentOption" id="payCardRadio" value="card">
+                      <div>
+                        <h6 class="payment-method-name">
+                          <i class="bi bi-credit-card-2-front text-primary me-1"></i> Credit / Debit Card
+                        </h6>
+                        <p class="payment-method-desc">Visa, MasterCard, RuPay, or Corporate Amex.</p>
+                      </div>
+                    </div>
+                    <div class="payment-method-icons fs-5 text-secondary">
+                      <i class="bi bi-credit-card"></i>
+                    </div>
+                  </div>
+                  <div class="payment-details-panel">
+                    <div class="card-fields-box">
+                      <div class="mb-3">
+                        <label class="checkout-floating-lbl">Card Number</label>
+                        <div class="input-group">
+                          <span class="input-group-text bg-white border-end-0"><i class="bi bi-credit-card text-muted"></i></span>
+                          <input type="text" class="form-control checkout-input border-start-0" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                      </div>
+                      <div class="row g-2">
+                        <div class="col-7">
+                          <label class="checkout-floating-lbl">Expiry Date</label>
+                          <input type="text" class="form-control checkout-input" placeholder="MM / YY" maxlength="5">
+                        </div>
+                        <div class="col-5">
+                          <label class="checkout-floating-lbl">CVV</label>
+                          <input type="password" class="form-control checkout-input" placeholder="123" maxlength="4">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. Cash on Delivery / Pay on Delivery -->
+                <div class="payment-method-card" onclick="selectPaymentMethod('cod')">
+                  <div class="payment-method-header">
+                    <div class="payment-method-title-wrap">
+                      <input class="payment-method-radio" type="radio" name="paymentOption" id="payCodRadio" value="cod">
+                      <div>
+                        <h6 class="payment-method-name">
+                          <i class="bi bi-cash-stack text-secondary me-1"></i> Cash on Delivery / Pay on Delivery
+                        </h6>
+                        <p class="payment-method-desc">Pay upon physical verification and delivery at your warehouse.</p>
+                      </div>
+                    </div>
+                    <div class="payment-method-icons">
+                      <span class="badge bg-light text-secondary border">Verified B2B</span>
+                    </div>
+                  </div>
+                  <div class="payment-details-panel">
+                    <div class="p-3 bg-light rounded border text-muted small">
+                      <i class="bi bi-truck me-2 text-primary fs-6"></i>
+                      <span>Pay by Cash, Business Cheque, or Company Demand Draft when your wholesale order reaches your warehouse.</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Checkbox: Add Note -->
+              <div class="form-check mt-3 mb-2">
+                <input class="form-check-input" type="checkbox" id="orderNoteCheck"
+                  onchange="document.getElementById('orderNoteField').classList.toggle('d-none', !this.checked)">
+                <label class="form-check-label text-dark" for="orderNoteCheck">
+                  Add a note to your order
+                </label>
+              </div>
+
+              <div id="orderNoteField" class="mb-3 d-none">
+                <textarea class="form-control checkout-input" rows="3"
+                  placeholder="Notes about your order, e.g. special delivery instructions"></textarea>
+              </div>
+
+              <!-- Terms Notice -->
+              <p class="checkout-guest-note mt-4 mb-3">
+                By proceeding with your purchase you agree to our <a href="contact.html" class="text-dark text-decoration-underline">Terms and Conditions</a> and <a href="about.html" class="text-dark text-decoration-underline">Privacy Policy</a>
+              </p>
+
+              <!-- Place Order Button (ThemeHunk Gold) -->
+              <button type="submit" class="checkout-btn-place-order">
+                Place Order
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Order Summary (ThemeHunk Exact) -->
+          <div class="col-lg-5">
+            <div class="checkout-summary-card">
+              <h4 class="checkout-summary-title">Order summary</h4>
+
+              <!-- Dynamic Items List -->
+              <div id="checkoutItemsList" class="checkout-items-list mb-3">
+                <!-- Injected via js/app.js renderCheckoutPage() -->
+              </div>
+
+              <!-- Add Coupons Collapsible -->
+              <div class="border-top py-3">
+                <div class="d-flex justify-content-between align-items-center" onclick="toggleCheckoutCoupon()"
+                  style="cursor: pointer;">
+                  <span class="small fw-semibold text-dark">Add coupons</span>
+                  <i id="checkoutCouponIcon" class="bi bi-chevron-down text-muted small"></i>
+                </div>
+                <div id="checkoutCouponCollapse" class="mt-2 d-none">
+                  <div class="input-group">
+                    <input type="text" id="checkoutCouponInput" class="form-control form-control-sm"
+                      placeholder="Coupon code">
+                    <button class="btn btn-dark btn-sm px-3" type="button"
+                      onclick="applyCheckoutCoupon()">Apply</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subtotal -->
+              <div class="d-flex justify-content-between py-2 border-top">
+                <span class="text-muted">Subtotal</span>
+                <span id="checkoutSubtotal" class="fw-semibold text-dark">$0.00</span>
+              </div>
+
+              <!-- Total -->
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-2">
+                <span class="fs-5 fw-bold text-dark">Total</span>
+                <span id="checkoutTotal" class="fs-4 fw-bolder text-dark">$0.00</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Newsletter Banner (ThemeHunk exact matching Screenshot 2) -->
+  <section class="checkout-newsletter-banner">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-4 col-md-5">
+          <h3 class="newsletter-heading mb-0">Subscribe our Newsletter</h3>
+        </div>
+        <div class="col-lg-4 col-md-3">
+          <p class="newsletter-subtext mb-0">Subscribe and get discount 20% Off</p>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <form class="d-flex" onsubmit="event.preventDefault(); showToast('Subscribed successfully! 20% discount code emailed.');">
+            <input type="email" class="form-control newsletter-input" placeholder="Email" required>
+            <button type="submit" class="newsletter-submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%23ffffff\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo mb-3" style="filter: brightness(0) invert(1);">
+          <p class="text-secondary mb-4">Your trusted B2B marketplace for quality factory products, competitive
+            wholesale pricing, and reliable global freight sourcing.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Account & Profile</a></li>
+            <li><a href="contact.html">Order Information</a></li>
+            <li><a href="about.html">Shipping & Delivery</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">For Business</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Request Custom Quote</a></li>
+            <li><a href="about.html">OEM & Private Label</a></li>
+            <li><a href="about.html">Trade Assurance</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Contact Direct</h4>
+          <p class="text-secondary mb-1">Toll Free: 1800-8401-5011</p>
+          <p class="text-secondary">Email: sales@b2bwholesale.trade</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Copyright Â© 2026 B2B Wholesale. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

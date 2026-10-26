@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Sourcing Team â€” B2B Wholesale</title>
+  <meta name="description"
+    content="Request a customized wholesale quote, inquire about custom branding, or get in touch with our global trade team.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar (Single Clean Header like Home Page) -->
+  <nav class="nav-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%230f172a\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo">
+        </a>
+
+        <!-- Center: Desktop Menu Links -->
+        <ul class="nav-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="electronics.html">Electronics</a></li>
+          <li><a href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+
+        <!-- Right: Profile & Cart Actions -->
+        <div class="header-actions">
+          <a href="contact.html" class="header-action-btn d-none d-sm-flex" title="Customer Account">
+            <i class="bi bi-person"></i>
+            <!-- <span class="d-none d-xl-inline">Account</span> -->
+          </a>
+          <button class="header-action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+            <span class="cart-icon-wrap">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge" style="display: none;">0</span>
+            </span>
+            <!-- <span class="d-none d-xl-inline">Your Cart</span> -->
+            <span class="cart-header-amount" style="display: none;"></span>
+          </button>
+          <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mobileNav">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Collapsible Menu -->
+      <div class="collapse d-lg-none py-3 border-top" id="mobileNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="electronics.html">Electronics</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html?category=fashion-apparel">Fashion &
+              Apparel</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Page Breadcrumb -->
+  <div class="bg-light py-4 border-bottom">
+    <div class="container">
+      <h1 class="fs-3 fw-bold mb-1">Contact Sourcing Team</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small text-muted">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Contact Us</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Contact Form & Cards -->
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Info Cards Row -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card h-100 p-4 border rounded-3 text-center bg-light">
+            <div class="category-icon-wrap mb-3"><i class="bi bi-telephone-inbound"></i></div>
+            <h5 class="fw-bold">Toll Free Phone</h5>
+            <p class="text-muted small mb-1">+1 800-090-098</p>
+            <p class="text-muted small">+1 800-8401-5011 (Desk)</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 p-4 border rounded-3 text-center bg-light">
+            <div class="category-icon-wrap mb-3"><i class="bi bi-envelope-check"></i></div>
+            <h5 class="fw-bold">Wholesale Email</h5>
+            <p class="text-muted small mb-1">sales@b2bwholesale.trade</p>
+            <p class="text-muted small">support@b2bwholesale.trade</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 p-4 border rounded-3 text-center bg-light">
+            <div class="category-icon-wrap mb-3"><i class="bi bi-geo-alt"></i></div>
+            <h5 class="fw-bold">Trade Headquarters</h5>
+            <p class="text-muted small mb-1">Trade Hub Tower, Suite 800</p>
+            <p class="text-muted small">International Logistics Zone</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inquiry Form Grid -->
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <div class="card border p-4 p-md-5 rounded-4 shadow-sm">
+            <h3 class="fw-bold mb-2">Request a Wholesale Quote</h3>
+            <p class="text-muted small mb-4">Fill out the details below and our sourcing specialists will get back to
+              you with custom volume tiers within 24 hours.</p>
+
+            <form
+              onsubmit="event.preventDefault(); showToast('Your quotation inquiry has been sent successfully! Our desk will contact you within 24 hours.'); this.reset();">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Full Name *</label>
+                  <input type="text" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Business Email *</label>
+                  <input type="email" class="form-control" required placeholder="buyer@company.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Company / Organization *</label>
+                  <input type="text" class="form-control" required placeholder="Retail Co. LLC">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Phone Number</label>
+                  <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Product Category of Interest</label>
+                  <select class="form-select">
+                    <option value="electronics">Consumer Electronics</option>
+                    <option value="apparel">Fashion & Apparel</option>
+                    <option value="kitchen">Home & Kitchenware</option>
+                    <option value="beauty">Beauty & Personal Care</option>
+                    <option value="industrial">Industrial Machinery & Tools</option>
+                    <option value="office">Office Furniture & Supplies</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Estimated Order Volume</label>
+                  <select class="form-select">
+                    <option value="sample">Sample Order (1 - 10 Units)</option>
+                    <option value="small">Small Bulk (50 - 200 Units)</option>
+                    <option value="pallet">Pallet Load (200 - 1,000 Units)</option>
+                    <option value="container">Full 20ft / 40ft Container</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-bold">Custom Requirements / Notes</label>
+                  <textarea class="form-control" rows="4"
+                    placeholder="Mention destination country, private labeling, custom colors, or specific packaging required..."></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-primary-custom w-100 justify-content-center py-3">
+                    <i class="bi bi-send-check"></i> Submit Wholesale Inquiry
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card border p-4 rounded-4 shadow-sm bg-light mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-clock-history text-warning me-2"></i> Operational Hours</h5>
+            <div class="d-flex justify-content-between py-2 border-bottom small">
+              <span>Monday â€“ Friday:</span>
+              <strong class="text-dark">08:00 AM â€“ 08:00 PM (EST)</strong>
+            </div>
+            <div class="d-flex justify-content-between py-2 border-bottom small">
+              <span>Saturday:</span>
+              <strong class="text-dark">09:00 AM â€“ 04:00 PM (EST)</strong>
+            </div>
+            <div class="d-flex justify-content-between py-2 small">
+              <span>Sunday:</span>
+              <strong class="text-muted">Closed (Online Desk Active)</strong>
+            </div>
+          </div>
+
+          <div class="card border p-4 rounded-4 shadow-sm">
+            <h5 class="fw-bold mb-3"><i class="bi bi-shield-check text-warning me-2"></i> Buyer Protection</h5>
+            <p class="small text-muted mb-2"><i class="bi bi-check-lg text-success me-1"></i> Trade assurance for all
+              payment transactions</p>
+            <p class="small text-muted mb-2"><i class="bi bi-check-lg text-success me-1"></i> Comprehensive sample
+              inspection before mass production</p>
+            <p class="small text-muted mb-0"><i class="bi bi-check-lg text-success me-1"></i> Full container tracking
+              from factory to warehouse</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%23ffffff\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo mb-3" style="filter: brightness(0) invert(1);">
+          <p class="text-secondary mb-4">Your trusted B2B marketplace for quality factory products, competitive
+            wholesale pricing, and reliable global freight sourcing.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Account & Profile</a></li>
+            <li><a href="contact.html">Order Information</a></li>
+            <li><a href="about.html">Shipping & Delivery</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">For Business</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Request Custom Quote</a></li>
+            <li><a href="about.html">OEM & Private Label</a></li>
+            <li><a href="about.html">Trade Assurance</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Contact Direct</h4>
+          <p class="text-secondary mb-1">Toll Free: 1800-8401-5011</p>
+          <p class="text-secondary">Email: sales@b2bwholesale.trade</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Copyright Â© 2026 B2B Wholesale. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Wholesale Cart</h3>
+      <button class="btn btn-sm btn-outline-secondary" onclick="closeCartDrawer()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div id="cartDrawerBody" class="cart-drawer-body"></div>
+    <div id="cartDrawerFooter" class="cart-drawer-footer" style="display: none;">
+      <div class="cart-subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotalAmount">$0.00</span>
+      </div>
+      <a href="cart.html" class="btn-primary-custom w-100 justify-content-center mb-2">
+        <i class="bi bi-cart-check"></i> View Full Cart & Checkout
+      </a>
+    </div>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

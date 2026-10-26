@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wholesale Order Cart & Checkout â€” B2B Wholesale</title>
+  <meta name="description"
+    content="Review your wholesale items, adjust quantities, calculate estimated freight, and submit your order.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar (Single Clean Header like Home Page) -->
+  <nav class="nav-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%230f172a\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo">
+        </a>
+
+        <!-- Center: Desktop Menu Links -->
+        <ul class="nav-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="electronics.html">Electronics</a></li>
+          <li><a href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Right: Profile & Cart Actions -->
+        <div class="header-actions">
+          <a href="contact.html" class="header-action-btn d-none d-sm-flex" title="Customer Account">
+            <i class="bi bi-person"></i>
+            <!-- <span class="d-none d-xl-inline">Account</span> -->
+          </a>
+          <button class="header-action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+            <span class="cart-icon-wrap">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge" style="display: none;">0</span>
+            </span>
+            <!-- <span class="d-none d-xl-inline">Your Cart</span> -->
+            <span class="cart-header-amount" style="display: none;"></span>
+          </button>
+          <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mobileNav">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Collapsible Menu -->
+      <div class="collapse d-lg-none py-3 border-top" id="mobileNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="electronics.html">Electronics</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html?category=fashion-apparel">Fashion &
+              Apparel</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ThemeHunk Cart Main Page -->
+  <main class="th-cart-page-section">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="th-cart-breadcrumb" aria-label="breadcrumb">
+        <a href="index.html">Home</a> <span class="mx-1">/</span> <span class="text-dark fw-medium">Cart</span>
+      </nav>
+
+      <!-- Centered Title -->
+      <h1 class="th-cart-main-title">Cart</h1>
+
+      <!-- Minimalist 2-Column Table (PRODUCT & TOTAL) -->
+      <div class="th-cart-table-wrapper">
+        <table class="th-cart-table">
+          <thead>
+            <tr>
+              <th class="th-col-product">PRODUCT</th>
+              <th class="th-col-total">TOTAL</th>
+            </tr>
+          </thead>
+          <tbody id="cartPageTableBody">
+            <!-- Dynamically populated via js/app.js -->
+          </tbody>
+        </table>
+
+        <!-- Actions / Coupon bar -->
+        <div class="th-cart-actions-bar">
+          <div class="th-page-coupon-box">
+            <input type="text" id="cartCouponInput" class="th-page-coupon-input" placeholder="Coupon code">
+            <button class="th-page-coupon-btn" onclick="applyPageCoupon()">Apply coupon</button>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-dark btn-sm rounded-3 px-3 py-2 fw-semibold" onclick="updateCartUI()">
+              Update cart
+            </button>
+            <button class="btn btn-outline-danger btn-sm rounded-3 px-3 py-2" onclick="clearCart()">
+              <i class="bi bi-trash me-1"></i> Empty cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Totals Section -->
+        <div class="th-cart-totals-section">
+          <div class="th-cart-totals-card">
+            <h3 class="th-totals-title">Cart totals</h3>
+            <div class="th-totals-row">
+              <span>Subtotal</span>
+              <strong id="cartSummarySubtotal">$0.00</strong>
+            </div>
+            <div class="th-totals-row">
+              <span>Shipping</span>
+              <span class="text-success fw-semibold">Free Wholesale Freight</span>
+            </div>
+            <div class="th-totals-row th-totals-final">
+              <span>Total</span>
+              <strong id="cartSummaryTotal">$0.00</strong>
+            </div>
+            <a href="checkout.html" class="th-btn-proceed-checkout text-decoration-none d-block text-center">
+              Proceed to checkout
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+        <!-- Site Footer -->
+        <footer class="site-footer">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <img src="images/logo.png"
+                  onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%23ffffff\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+                  alt="B2B Wholesale" class="site-logo mb-3" style="filter: brightness(0) invert(1);">
+                <p class="text-secondary mb-4">Your trusted B2B marketplace for quality factory products, competitive
+                  wholesale pricing, and reliable global freight sourcing.</p>
+              </div>
+              <div class="col-lg-2 col-md-6 col-6">
+                <h4 class="footer-heading">Customer Support</h4>
+                <ul class="footer-links">
+                  <li><a href="contact.html">Account & Profile</a></li>
+                  <li><a href="contact.html">Order Information</a></li>
+                  <li><a href="about.html">Shipping & Delivery</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-6 col-6">
+                <h4 class="footer-heading">For Business</h4>
+                <ul class="footer-links">
+                  <li><a href="contact.html">Request Custom Quote</a></li>
+                  <li><a href="about.html">OEM & Private Label</a></li>
+                  <li><a href="about.html">Trade Assurance</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <h4 class="footer-heading">Contact Direct</h4>
+                <p class="text-secondary mb-1">Toll Free: 1800-8401-5011</p>
+                <p class="text-secondary">Email: sales@b2bwholesale.trade</p>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              Copyright Â© 2026 B2B Wholesale. All rights reserved.
+            </div>
+          </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+          function clearCart() {
+            if (confirm('Are you sure you want to remove all items from your cart?')) {
+              currentCart = [];
+              saveCart();
+            }
+          }
+        </script>
+</body>
+
+</html>

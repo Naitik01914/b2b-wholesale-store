@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product â€” B2B Wholesale</title>
+  <meta name="description"
+    content="Browse our complete catalog of certified wholesale goods with direct factory pricing and tiered bulk discounts.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar (Single Clean Header like Home Page) -->
+  <nav class="nav-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%230f172a\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo">
+        </a>
+
+        <!-- Center: Desktop Menu Links -->
+        <ul class="nav-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="electronics.html">Electronics</a></li>
+          <li><a href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Right: Profile & Cart Actions -->
+        <div class="header-actions">
+          <a href="contact.html" class="header-action-btn d-none d-sm-flex" title="Customer Account">
+            <i class="bi bi-person"></i>
+            <!-- <span class="d-none d-xl-inline">Account</span> -->
+          </a>
+          <button class="header-action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+            <span class="cart-icon-wrap">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge" style="display: none;">0</span>
+            </span>
+            <!-- <span class="d-none d-xl-inline">Your Cart</span> -->
+            <span class="cart-header-amount" style="display: none;"></span>
+          </button>
+          <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mobileNav">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Collapsible Menu -->
+      <div class="collapse d-lg-none py-3 border-top" id="mobileNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="electronics.html">Electronics</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html?category=fashion-apparel">Fashion &
+              Apparel</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-light py-3 border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small text-muted">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+          <li class="breadcrumb-item"><a href="shop.html" id="crumbCategory">Category</a></li>
+          <li class="breadcrumb-item active" id="crumbProduct">Product</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Product Detail -->
+  <div class="container py-5" id="productDetail">
+    <div class="text-center text-muted py-5">
+      <div class="spinner-border text-warning"></div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <section class="container pb-5" id="relatedSection" style="display:none;">
+    <h3 class="fw-bold mb-4">Related Products</h3>
+    <div class="row row-cols-2 row-cols-md-4 g-3" id="relatedProductsGrid"></div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%23ffffff\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo mb-3" style="filter: brightness(0) invert(1);">
+          <p class="text-secondary mb-4">Your trusted B2B marketplace for quality factory products, competitive
+            wholesale pricing, and reliable global freight sourcing.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Account & Profile</a></li>
+            <li><a href="contact.html">Order Information</a></li>
+            <li><a href="about.html">Shipping & Delivery</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">For Business</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Request Custom Quote</a></li>
+            <li><a href="about.html">OEM & Private Label</a></li>
+            <li><a href="about.html">Trade Assurance</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Contact Direct</h4>
+          <p class="text-secondary mb-1">Toll Free: 1800-8401-5011</p>
+          <p class="text-secondary">Email: sales@b2bwholesale.trade</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Copyright Â© 2026 B2B Wholesale. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Wholesale Cart</h3>
+      <button class="btn btn-sm btn-outline-secondary" onclick="closeCartDrawer()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div id="cartDrawerBody" class="cart-drawer-body"></div>
+    <div id="cartDrawerFooter" class="cart-drawer-footer" style="display: none;">
+      <div class="cart-subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotalAmount">$0.00</span>
+      </div>
+      <a href="cart.html" class="btn-primary-custom w-100 justify-content-center mb-2">
+        <i class="bi bi-cart-check"></i> View Full Cart & Checkout
+      </a>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal (ThemeHunk Wholesale Design) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered qv-modal-dialog">
+      <div class="modal-content border-0 qv-modal-card">
+        <!-- Close Button (Top-Right 'âœ•') -->
+        <button type="button" class="qv-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="modal-body p-0">
+          <div class="row g-0 align-items-center">
+            <!-- Left Column: Product Image Gallery & Slider -->
+            <div class="col-md-6 qv-gallery-col">
+              <div class="qv-slider-container" id="qvSliderContainer">
+                <div class="qv-slider-track" id="qvSliderTrack"></div>
+              </div>
+              <!-- Dots Indicator: â— â—‹ â—‹ â—‹ -->
+              <div class="qv-dots" id="qvDots"></div>
+            </div>
+
+            <!-- Right Column: Product Info & Actions -->
+            <div class="col-md-6 qv-info-col">
+              <!-- Brand/Vendor -->
+              <div class="qv-brand" id="qvBrand">HOMETECH</div>
+
+              <!-- Product Title -->
+              <h2 class="qv-title" id="qvTitle">Office Chair</h2>
+
+              <!-- Price -->
+              <div class="qv-price" id="qvPrice">$299.00</div>
+
+              <!-- Meta Data: SKU & Categories -->
+              <div class="qv-meta-list">
+                <div class="qv-meta-item">
+                  <span class="qv-meta-label">SKU:</span>
+                  <span class="qv-meta-value" id="qvSku">Off-321</span>
+                </div>
+                <div class="qv-meta-item">
+                  <span class="qv-meta-label">Categories:</span>
+                  <span class="qv-meta-value" id="qvCategories">Electronics , Office Supplies</span>
+                </div>
+              </div>
+
+              <!-- Social Share Icons -->
+              <div class="qv-share-row">
+                <span class="qv-share-label">Share:</span>
+                <div class="qv-share-icons">
+                  <a href="#" class="qv-share-icon" title="Share on Facebook" onclick="event.preventDefault(); window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on X" onclick="event.preventDefault(); window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on Pinterest" onclick="event.preventDefault(); window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on LinkedIn" onclick="event.preventDefault(); window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" class="qv-share-icon" title="Copy Link" onclick="event.preventDefault(); copyProductLink();"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+
+              <!-- Accordions: Short Description & Description -->
+              <div class="qv-accordion-section">
+                <!-- Accordion 1: Short Description (Open by default) -->
+                <div class="qv-accordion-item">
+                  <button type="button" class="qv-accordion-header" onclick="toggleQvAccordion(this)">
+                    <span>Short Description</span>
+                    <i class="bi bi-dash qv-accordion-icon"></i>
+                  </button>
+                  <div class="qv-accordion-body show" id="qvShortDesc">
+                    Facilisis netus leo maximus bibendum nascetur vel cras. Justo orci urna curae ligula potenti inceptos. Tortor nibh nisi nascetur porttitor fames.
+                  </div>
+                </div>
+
+                <!-- Accordion 2: Description (Collapsed by default) -->
+                <div class="qv-accordion-item">
+                  <button type="button" class="qv-accordion-header" onclick="toggleQvAccordion(this)">
+                    <span>Description</span>
+                    <i class="bi bi-plus qv-accordion-icon"></i>
+                  </button>
+                  <div class="qv-accordion-body" id="qvFullDesc">
+                    Premium commercial wholesale merchandise with high-durability finish, tested for commercial and institutional environments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quantity Stepper & Add to Cart -->
+              <div class="qv-action-row">
+                <div class="qv-stepper">
+                  <button type="button" class="qv-stepper-btn" onclick="stepQvQty(-1)" title="Decrease quantity">âˆ’</button>
+                  <input type="number" id="qvQuantity" class="qv-stepper-input" value="1" min="1" readonly>
+                  <button type="button" class="qv-stepper-btn" onclick="stepQvQty(1)" title="Increase quantity">+</button>
+                </div>
+                <button type="button" id="qvAddToCartBtn" class="qv-add-to-cart-btn">
+                  <i class="bi bi-bag"></i> ADD TO CART
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Universal SVG fallback placeholder in case network / image fails
+    const SVG_FALLBACK = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='%23f8fafc'><rect width='400' height='400' fill='%23f1f5f9'/><path d='M160 180a30 30 0 100-60 30 30 0 000 60zm100 40l-50-60-80 100h180l-50-40z' fill='%23cbd5e1'/><text x='200' y='320' font-family='sans-serif' font-size='16' font-weight='600' fill='%2394a3b8' text-anchor='middle'>B2B Product</text></svg>";
+
+    // Build guaranteed 4-image gallery for any product
+    function getProductGalleryImages(p) {
+      if (Array.isArray(p.gallery) && p.gallery.length >= 2) {
+        return p.gallery.map(img => ({
+          url: typeof img === 'string' ? img : img.url,
+          fallback: p.fallbackImage || SVG_FALLBACK
+        }));
+      }
+
+      const primary = p.image || p.fallbackImage || SVG_FALLBACK;
+      const secondary = p.fallbackImage || p.image || SVG_FALLBACK;
+
+      const categoryGalleries = {
+        'fashion-apparel': [
+          'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80'
+        ],
+        'beauty-personal-care': [
+          'https://images.unsplash.com/photo-1608248597359-3e3c23d40131?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80'
+        ],
+        'home-kitchen': [
+          'https://images.unsplash.com/photo-1584990347449-a2924294a2fa?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&auto=format&fit=crop&q=80'
+        ],
+        'electronics': [
+          'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80'
+        ],
+        'office-supplies': [
+          'https://images.unsplash.com/photo-1580481077195-c9998379294a?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&auto=format&fit=crop&q=80'
+        ],
+        'industrial-supplies': [
+          'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&auto=format&fit=crop&q=80'
+        ],
+        'outdoor-drinkware': [
+          'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80',
+          'https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=600&auto=format&fit=crop&q=80'
+        ]
+      };
+
+      const catList = categoryGalleries[p.categorySlug] || categoryGalleries['electronics'];
+      return [
+        { url: primary, fallback: secondary },
+        { url: secondary, fallback: catList[0] },
+        { url: catList[1] || secondary, fallback: secondary },
+        { url: catList[2] || catList[0], fallback: primary }
+      ];
+    }
+
+    // product.html?id=X -> Renders wholesale product details matching design
+    function renderProductPage() {
+      const id = Number(new URLSearchParams(location.search).get('id')) || 1;
+      const p = allProducts.find(x => x.id === id) || allProducts[0];
+      const box = document.getElementById('productDetail');
+
+      if (!p) {
+        box.innerHTML = `<div class="text-center py-5"><i class="bi bi-emoji-frown display-3 text-muted d-block mb-3"></i>
+          <h4>Product not found</h4><a href="shop.html" class="btn-primary-custom mt-3 d-inline-flex">Back to Shop</a></div>`;
+        return;
+      }
+
+      document.title = `${p.name} â€” B2B Wholesale`;
+      const crumbCat = document.getElementById('crumbCategory');
+      crumbCat.textContent = p.category;
+      crumbCat.href = `shop.html?category=${p.categorySlug || 'electronics'}`;
+      document.getElementById('crumbProduct').textContent = p.name;
+
+      const inStock = p.inStock !== false;
+      const stars = '<i class="bi bi-star-fill text-warning"></i>'.repeat(Math.round(p.rating || 5));
+      const price = Number(p.price) || 299;
+
+      // Tier prices
+      const tier1Price = (price * 0.95).toFixed(2);
+      const tier2Price = (price * 0.90).toFixed(2);
+      const tier3Price = (price * 0.85).toFixed(2);
+      const tier4Price = (price * 0.80).toFixed(2);
+
+      // Gallery Images
+      const galleryImgs = getProductGalleryImages(p);
+
+      box.innerHTML = `
+        <div class="row g-5">
+          <!-- Left: Product Gallery -->
+          <div class="col-lg-6">
+            <div class="pd-gallery-wrapper" onmouseenter="stopPdAutoGallery()" onmouseleave="startPdAutoGallery()">
+              <!-- Vertical Thumbnails -->
+              <div class="pd-thumbs-column">
+                ${galleryImgs.map((imgObj, idx) => `
+                  <div class="pd-thumb-box ${idx === 0 ? 'active' : ''}" onclick="switchMainImage('${imgObj.url}', this, '${imgObj.fallback}', true)">
+                    <img src="${imgObj.url}" 
+                         onerror="this.onerror=function(){this.src=SVG_FALLBACK;}; this.src='${imgObj.fallback}';" 
+                         alt="Thumb ${idx + 1}"
+                         loading="lazy">
+                  </div>
+                `).join('')}
+              </div>
+
+              <!-- Main Image Box -->
+              <div class="pd-main-img-box">
+                <button class="pd-zoom-icon" title="Quick View" onclick="openQuickView(${p.id})">
+                  <i class="bi bi-search"></i>
+                </button>
+                <img id="pdMainImg" 
+                     src="${(galleryImgs[0] && galleryImgs[0].url) || p.image}" 
+                     onerror="this.onerror=function(){this.src=SVG_FALLBACK;}; this.src='${(galleryImgs[0] && galleryImgs[0].fallback) || p.fallbackImage || SVG_FALLBACK}';" 
+                     alt="${p.name}">
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Product Information & Tiered Wholesale Pricing -->
+          <div class="col-lg-6">
+            <div class="pd-brand-label">${p.category} â€¢ Factory Direct</div>
+            <h1 class="pd-title">${p.name}</h1>
+            
+            <div class="pd-price-display">$${price.toFixed(2)}</div>
+
+            <!-- Popular with buyers badge -->
+            <div class="pd-popular-badge">
+              <i class="bi bi-people-fill"></i>
+              <span>Popular with ${p.reviewsCount || 10} business buyers</span>
+            </div>
+
+            <p class="pd-description-text">${p.description || 'Premium commercial wholesale product manufactured to high industrial specifications. Features durable construction, bulk tiered pricing, and international trade compliance.'}</p>
+
+            <!-- Tiered Bulk Wholesale Pricing -->
+            <div class="pd-tier-container">
+              <!-- Tier 1 -->
+              <div class="pd-tier-card active" id="tierCard1" onclick="selectTier(1, 1)">
+                <div class="pd-tier-left">
+                  <div class="pd-tier-radio"><div class="pd-tier-radio-inner"></div></div>
+                  <span class="pd-tier-text">Buy 1 - 6 sets and save 5% per set</span>
+                </div>
+                <div class="pd-tier-right">
+                  <span class="pd-tier-badge">SAVE 5%</span>
+                  <div class="pd-tier-pricing-text">
+                    <span class="old-p">$${price.toFixed(2)}</span>
+                    <span class="new-p">$${tier1Price}</span>
+                    <span class="per-unit">/ each item</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tier 2 -->
+              <div class="pd-tier-card" id="tierCard2" onclick="selectTier(2, 7)">
+                <div class="pd-tier-left">
+                  <div class="pd-tier-radio"><div class="pd-tier-radio-inner"></div></div>
+                  <span class="pd-tier-text">Buy 7 - 15 sets and save 10% per set</span>
+                </div>
+                <div class="pd-tier-right">
+                  <span class="pd-tier-badge">SAVE 10%</span>
+                  <div class="pd-tier-pricing-text">
+                    <span class="old-p">$${price.toFixed(2)}</span>
+                    <span class="new-p">$${tier2Price}</span>
+                    <span class="per-unit">/ each item</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tier 3 -->
+              <div class="pd-tier-card" id="tierCard3" onclick="selectTier(3, 16)">
+                <div class="pd-tier-left">
+                  <div class="pd-tier-radio"><div class="pd-tier-radio-inner"></div></div>
+                  <span class="pd-tier-text">Buy 16 - 29 sets and save 15% per set</span>
+                </div>
+                <div class="pd-tier-right">
+                  <span class="pd-tier-badge">SAVE 15%</span>
+                  <div class="pd-tier-pricing-text">
+                    <span class="old-p">$${price.toFixed(2)}</span>
+                    <span class="new-p">$${tier3Price}</span>
+                    <span class="per-unit">/ each item</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tier 4 -->
+              <div class="pd-tier-card" id="tierCard4" onclick="selectTier(4, 30)">
+                <div class="pd-tier-left">
+                  <div class="pd-tier-radio"><div class="pd-tier-radio-inner"></div></div>
+                  <span class="pd-tier-text">Buy 30 - 50 sets and save 20% per set</span>
+                </div>
+                <div class="pd-tier-right">
+                  <span class="pd-tier-badge">SAVE 20%</span>
+                  <div class="pd-tier-pricing-text">
+                    <span class="old-p">$${price.toFixed(2)}</span>
+                    <span class="new-p">$${tier4Price}</span>
+                    <span class="per-unit">/ each item</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quantity & Actions -->
+            <div class="pd-actions-row">
+              <div class="pd-qty-stepper">
+                <button class="pd-qty-btn" type="button" onclick="changeQty(-1)">âˆ’</button>
+                <input type="number" id="pdQty" class="pd-qty-input" value="1" min="1" oninput="syncTierWithQty()">
+                <button class="pd-qty-btn" type="button" onclick="changeQty(1)">+</button>
+              </div>
+              <button class="pd-add-to-cart-btn" ${inStock ? '' : 'disabled'} onclick="addToCart(${p.id}, getQty())">
+                <i class="bi bi-bag-plus"></i> Add to Cart
+              </button>
+              <button class="pd-buy-now-btn" ${inStock ? '' : 'disabled'} onclick="buyNow(${p.id})">
+                <i class="bi bi-lightning-charge"></i> Buy Now
+              </button>
+            </div>
+
+            <!-- Pay Securely With Confidence Block -->
+            <div class="pd-trust-block">
+              <div class="pd-trust-title">Pay Securely with Confidence</div>
+              <div class="pd-payment-badges">
+                <span class="pd-pay-badge"><i class="bi bi-credit-card-2-front text-primary"></i> Visa / Mastercard</span>
+                <span class="pd-pay-badge"><i class="bi bi-paypal text-info"></i> PayPal</span>
+                <span class="pd-pay-badge"><i class="bi bi-apple"></i> Apple Pay</span>
+                <span class="pd-pay-badge"><i class="bi bi-shield-check text-success"></i> 256-Bit SSL</span>
+                <span class="pd-pay-badge"><i class="bi bi-award text-warning"></i> Trade Assurance</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <ul class="nav nav-tabs mt-5" role="tablist">
+          <li class="nav-item"><button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#tabDesc" type="button">Description</button></li>
+          <li class="nav-item"><button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#tabInfo" type="button">Additional Information</button></li>
+          <li class="nav-item"><button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#tabReviews" type="button">Reviews (${p.reviewsCount || 12})</button></li>
+        </ul>
+        <div class="tab-content border border-top-0 rounded-bottom p-4 bg-white shadow-sm mb-5">
+          <div class="tab-pane fade show active" id="tabDesc">
+            <h5 class="fw-bold mb-3">Product Overview</h5>
+            <p>${p.description || 'Commercial wholesale product crafted to international quality benchmarks. Designed for commercial distributors and retailers.'}</p>
+            <div class="row g-3 mt-3">
+              <div class="col-md-4"><div class="p-3 border rounded-3 bg-light"><i class="bi bi-truck text-warning fs-4 d-block mb-2"></i><b>Global Freight:</b> Door-to-door ocean & air shipping with customs handling.</div></div>
+              <div class="col-md-4"><div class="p-3 border rounded-3 bg-light"><i class="bi bi-tags text-warning fs-4 d-block mb-2"></i><b>OEM / Private Label:</b> Custom packaging and logo printing available.</div></div>
+              <div class="col-md-4"><div class="p-3 border rounded-3 bg-light"><i class="bi bi-shield-lock text-warning fs-4 d-block mb-2"></i><b>Factory Verified:</b> Certified production facilities with ISO compliance.</div></div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tabInfo">
+            <table class="table table-sm mb-0" style="max-width:560px;"><tbody>
+              <tr><th class="text-muted" style="width:180px;">SKU</th><td class="fw-semibold">${p.sku || 'B2B-WHOLESALE'}</td></tr>
+              <tr><th class="text-muted">Category</th><td class="fw-semibold">${p.category}</td></tr>
+              <tr><th class="text-muted">Availability</th><td>${inStock ? '<span class="badge bg-success">In Stock (Factory Ready)</span>' : '<span class="badge bg-danger">Backorder</span>'}</td></tr>
+              <tr><th class="text-muted">Rating</th><td>${stars} <span class="ms-1 fw-semibold">${p.rating || 5} / 5</span></td></tr>
+              <tr><th class="text-muted">Packaging</th><td>Export Grade Corrugated Carton Box</td></tr>
+            </tbody></table>
+          </div>
+          <div class="tab-pane fade" id="tabReviews">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="display-5 fw-bold text-dark">${p.rating || 5}.0</div>
+              <div>
+                <div>${stars}</div>
+                <div class="small text-muted">Based on ${p.reviewsCount || 18} wholesale buyer reviews</div>
+              </div>
+            </div>
+            <div class="border-top pt-3">
+              <div class="d-flex justify-content-between mb-1">
+                <b>Apex Global Imports</b>
+                <span class="text-muted small">2 weeks ago</span>
+              </div>
+              <div class="text-warning small mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <p class="text-secondary small mb-0">"Excellent product finish and prompt bulk fulfillment. Tiered pricing gave us great margins for our retail stores."</p>
+            </div>
+          </div>
+        </div>`;
+
+      // Related Products
+      const related = allProducts.filter(x => x.categorySlug === p.categorySlug && x.id !== p.id).slice(0, 4);
+      const fill = related.length ? related : allProducts.filter(x => x.id !== p.id).slice(0, 4);
+      renderProducts('relatedProductsGrid', fill);
+      document.getElementById('relatedSection').style.display = 'block';
+
+      // Start automatic sliding on product detail gallery
+      startPdAutoGallery();
+    }
+
+    // Auto-slide state for product page
+    let pdAutoSlideInterval = null;
+    let pdCurrentIndex = 0;
+
+    function startPdAutoGallery() {
+      if (pdAutoSlideInterval) clearInterval(pdAutoSlideInterval);
+      const thumbs = document.querySelectorAll('.pd-thumb-box');
+      if (!thumbs || thumbs.length <= 1) return;
+
+      pdAutoSlideInterval = setInterval(() => {
+        const currentThumbs = document.querySelectorAll('.pd-thumb-box');
+        if (!currentThumbs.length) return;
+        pdCurrentIndex = (pdCurrentIndex + 1) % currentThumbs.length;
+        const targetThumb = currentThumbs[pdCurrentIndex];
+        if (targetThumb) {
+          targetThumb.click();
+        }
+      }, 2200); // Automatically advances every 2.2 seconds
+    }
+
+    function stopPdAutoGallery() {
+      if (pdAutoSlideInterval) {
+        clearInterval(pdAutoSlideInterval);
+        pdAutoSlideInterval = null;
+      }
+    }
+
+    // Switch Main Gallery Image on Thumbnail Click or Auto-slide
+    function switchMainImage(src, thumbEl, fallbackSrc, isUserClick = false) {
+      const mainImg = document.getElementById('pdMainImg');
+      if (mainImg) {
+        mainImg.style.transition = 'opacity 0.25s ease';
+        mainImg.style.opacity = '0.35';
+        setTimeout(() => {
+          mainImg.src = src;
+          mainImg.onerror = function () {
+            this.onerror = function () { this.src = SVG_FALLBACK; };
+            this.src = fallbackSrc || SVG_FALLBACK;
+          };
+          mainImg.style.opacity = '1';
+        }, 120);
+      }
+      const thumbs = document.querySelectorAll('.pd-thumb-box');
+      thumbs.forEach((el, idx) => {
+        el.classList.remove('active');
+        if (el === thumbEl) pdCurrentIndex = idx;
+      });
+      if (thumbEl) thumbEl.classList.add('active');
+
+      if (isUserClick) {
+        startPdAutoGallery();
+      }
+    }
+
+    // Tier Selection Logic
+    function selectTier(tierIndex, qty) {
+      document.querySelectorAll('.pd-tier-card').forEach(el => el.classList.remove('active'));
+      const card = document.getElementById(`tierCard${tierIndex}`);
+      if (card) card.classList.add('active');
+      const qtyInput = document.getElementById('pdQty');
+      if (qtyInput) qtyInput.value = qty;
+    }
+
+    // Auto highlight tier when typing / clicking stepper
+    function syncTierWithQty() {
+      const q = getQty();
+      document.querySelectorAll('.pd-tier-card').forEach(el => el.classList.remove('active'));
+      if (q >= 30) {
+        document.getElementById('tierCard4')?.classList.add('active');
+      } else if (q >= 16) {
+        document.getElementById('tierCard3')?.classList.add('active');
+      } else if (q >= 7) {
+        document.getElementById('tierCard2')?.classList.add('active');
+      } else {
+        document.getElementById('tierCard1')?.classList.add('active');
+      }
+    }
+
+    const getQty = () => Math.max(1, parseInt(document.getElementById('pdQty')?.value) || 1);
+    function changeQty(d) {
+      const el = document.getElementById('pdQty');
+      if (el) {
+        el.value = Math.max(1, getQty() + d);
+        syncTierWithQty();
+      }
+    }
+    function buyNow(id) {
+      addToCart(id, getQty());
+      setTimeout(() => location.href = 'cart.html', 500);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderProductPage);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,845 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Wholesale â€” Quality Products, Smarter Sourcing</title>
+  <meta name="description"
+    content="Connect with trusted manufacturers and discover premium wholesale products at competitive prices. Flexible MOQs, reliable suppliers, and fast global shipping.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%230f172a\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo">
+        </a>
+
+
+        <!-- Desktop Menu Links -->
+        <ul class="nav-links-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <!-- <li><a href="shop.html?category=electronics">Electronics</a></li>-->
+          <li><a href="electronics.html">Electronics</a></li>
+
+          <li><a href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Direct Phone Call Support -->
+        <div class="header-actions">
+          <a href="contact.html" class="header-action-btn d-none d-sm-flex" title="Customer Account">
+            <i class="bi bi-person"></i>
+            <!-- <span class="d-none d-xl-inline">Account</span> -->
+          </a>
+          <button class="header-action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+            <span class="cart-icon-wrap">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge" style="display: none;">0</span>
+            </span>
+            <!-- <span class="d-none d-xl-inline">Your Cart</span> -->
+            <span class="cart-header-amount" style="display: none;"></span>
+          </button>
+          <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mobileNav">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+
+
+
+      </div>
+
+      <!-- Mobile Collapsible Menu -->
+      <div class="collapse d-lg-none py-3 border-top" id="mobileNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link fw-semibold active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold"
+              href="https://wpthemes.themehunk.com/b2b-wholesale/shop/">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold"
+              href="https://wpthemes.themehunk.com/b2b-wholesale/product-category/electronics/">Electronics</a>
+          </li>
+          <li class="nav-item"><a class="nav-link fw-semibold"
+              href="https://wpthemes.themehunk.com/b2b-wholesale/product-category/fashion-apparel/">Fashion &
+              Apparel</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+          <span class="hero-eyebrow">B2B COMMERCE â€¢ BULK BUYING â€¢ GLOBAL TRADE</span>
+          <h1 class="hero-title">
+            Quality Products.<br>
+            <span class="highlight-text">Smarter Sourcing.</span>
+          </h1>
+          <p class="hero-desc">
+            Connect with trusted manufacturers and discover premium wholesale products at competitive prices. Enjoy
+            flexible MOQs, reliable suppliers, and fast global shipping.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="contact.html" class="btn-primary-custom">
+              <i class="bi bi-file-earmark-text"></i> Request a Quote
+            </a>
+            <a href="shop.html" class="btn-dark-custom">
+              <i class="bi bi-grid"></i> Explore Products
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-image-wrap">
+            <img src="https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/im1q-1.jpg"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop&q=80'"
+              alt="Wholesale home, fashion and industrial products">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands / Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="brand-logos-row">
+        <span class="brand-badge">amazon</span>
+        <span class="brand-badge">shopify</span>
+        <span class="brand-badge">Alibaba.com</span>
+        <span class="brand-badge">COSTCO</span>
+        <span class="brand-badge">ebay</span>
+        <span class="brand-badge">global sources</span>
+        <span class="brand-badge">BOSE</span>
+        <i class="bi bi-chevron-right text-muted d-none d-lg-inline-block" style="font-size: 14px; opacity: 0.5;"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop by Category Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="section-title mb-0">Shop By Category</h2>
+      </div>
+
+      <div class="row g-3 justify-content-center">
+
+        <!-- 1. Electronics -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="shop.html?category=electronics" class="category-card">
+            <div class="category-img-wrap">
+              <img src="images/categories/1-1.jpg"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80'"
+                alt="Electronics">
+            </div>
+            <div class="category-pill-badge">
+              <i class="bi bi-camera-fill"></i>
+              <span>Electronics</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 2. Home & Kitchen -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="shop.html?category=home-kitchen" class="category-card">
+            <div class="category-img-wrap">
+              <img src="images/categories/2-1.jpg"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=500&auto=format&fit=crop&q=80'"
+                alt="Home & Kitchen">
+            </div>
+            <div class="category-pill-badge">
+              <i class="bi bi-house-door-fill"></i>
+              <span>Home & Kitchen</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 3. Fashion -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="shop.html?category=fashion-apparel" class="category-card">
+            <div class="category-img-wrap">
+              <img src="images/categories/3-1.jpg"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500&auto=format&fit=crop&q=80'"
+                alt="Fashion">
+            </div>
+            <div class="category-pill-badge">
+              <i class="bi bi-bag-fill"></i>
+              <span>Fashion</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 4. Skin Care -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="shop.html?category=beauty-personal-care" class="category-card">
+            <div class="category-img-wrap">
+              <img src="images/categories/4-1.jpg"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&auto=format&fit=crop&q=80'"
+                alt="Skin Care">
+            </div>
+            <div class="category-pill-badge">
+              <i class="bi bi-tree-fill"></i>
+              <span>Skin Care</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 5. Industrial -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="shop.html?category=industrial-supplies" class="category-card">
+            <div class="category-img-wrap">
+              <img src="images/categories/5-1.jpg"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?w=500&auto=format&fit=crop&q=80'"
+                alt="Industrial">
+            </div>
+            <div class="category-pill-badge">
+              <i class="bi bi-tools"></i>
+              <span>Industrial</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 6. Office Products -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="shop.html?category=office-supplies" class="category-card">
+            <div class="category-img-wrap">
+              <img src="images/categories/6-1.jpg"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580481077111-e6e2e0129a67?w=500&auto=format&fit=crop&q=80'"
+                alt="Office Products">
+            </div>
+            <div class="category-pill-badge">
+              <i class="bi bi-briefcase-fill"></i>
+              <span>Office Products</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wholesale Promo Box (Exact Match to Demo Screenshot) -->
+  <section class="py-4">
+    <div class="container">
+      <div class="wholesale-promo-box">
+
+        <!-- Left: Headline & Subtitle -->
+        <div class="wholesale-info">
+          <h2>Wholesale Pricing Made Simple</h2>
+          <p>Unlock better pricing, simplified sourcing, and product solutions.</p>
+        </div>
+
+        <!-- Middle: 3 Feature Pills -->
+        <div class="wholesale-features-row">
+          <div class="feature-pill">
+            <div class="feature-pill-icon"><i class="bi bi-box-seam"></i></div>
+            <div>
+              <h5>Bulk Savings</h5>
+              <small>Better Prices</small>
+            </div>
+          </div>
+          <div class="feature-pill">
+            <div class="feature-pill-icon"><i class="bi bi-boxes"></i></div>
+            <div>
+              <h5>Flexible MOQ</h5>
+              <small>Order Your Way</small>
+            </div>
+          </div>
+          <div class="feature-pill">
+            <div class="feature-pill-icon"><i class="bi bi-shield-check"></i></div>
+            <div>
+              <h5>Private Label</h5>
+              <small>Product Solutions</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Pallet Boxes Image & Button -->
+        <div class="wholesale-cta-wrap">
+          <img src="https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/imd1-1.png"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1586528116493-a029325540fa?w=400&auto=format&fit=crop&q=80'"
+            alt="Wholesale Shipment" class="wholesale-pallet-img">
+          <a href="shop.html" class="btn-start-sourcing">Start Sourcing</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="py-5" id="featuredSection">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="section-title">Featured Wholesale Products</h2>
+          <p class="section-subtitle">Verified in-stock catalog ready for fast container and pallet dispatch</p>
+        </div>
+        <a href="shop.html" class="btn btn-outline-dark btn-sm fw-semibold">
+          View All <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Dynamic Products Grid -->
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3" id="featuredProductsGrid">
+        <!-- Injected dynamically via js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section (Exact Match to ThemeHunk Demo) -->
+  <section class="py-4 bg-white">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">How It Works</h2>
+      </div>
+
+      <div class="how-it-works-banner">
+        <!-- Step 1 -->
+        <div class="hiw-step">
+          <div class="hiw-icon"><i class="bi bi-boxes"></i></div>
+          <div class="hiw-text">
+            <h5>Find Products</h5>
+            <p>Explore our wholesale collection.</p>
+          </div>
+        </div>
+
+        <div class="hiw-arrow"><i class="bi bi-arrow-right"></i></div>
+
+        <!-- Step 2 -->
+        <div class="hiw-step">
+          <div class="hiw-icon"><i class="bi bi-boxes"></i></div>
+          <div class="hiw-text">
+            <h5>Browse</h5>
+            <p>Explore our wholesale collection.</p>
+          </div>
+        </div>
+
+        <div class="hiw-arrow"><i class="bi bi-arrow-right"></i></div>
+
+        <!-- Step 3 -->
+        <div class="hiw-step">
+          <div class="hiw-icon"><i class="bi bi-boxes"></i></div>
+          <div class="hiw-text">
+            <h5>Order</h5>
+            <p>Confirm your purchase securely.</p>
+          </div>
+        </div>
+
+        <div class="hiw-arrow"><i class="bi bi-arrow-right"></i></div>
+
+        <!-- Step 4 -->
+        <div class="hiw-step">
+          <div class="hiw-icon"><i class="bi bi-boxes"></i></div>
+          <div class="hiw-text">
+            <h5>Deliver</h5>
+            <p>Receive your products anywhere in the world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Counter Section (Dark Teal ThemeHunk Style) -->
+  <section class="py-3 bg-white">
+    <div class="container">
+      <div class="stats-dark-box">
+        <div class="stat-dark-item">
+          <div class="stat-dark-icon"><i class="bi bi-box-seam"></i></div>
+          <div>
+            <div class="stat-dark-number">15,000+</div>
+            <div class="stat-dark-label">Products Available</div>
+          </div>
+        </div>
+
+        <div class="stat-dark-item">
+          <div class="stat-dark-icon"><i class="bi bi-people-fill"></i></div>
+          <div>
+            <div class="stat-dark-number">3,500+</div>
+            <div class="stat-dark-label">Business Partners</div>
+          </div>
+        </div>
+
+        <div class="stat-dark-item">
+          <div class="stat-dark-icon"><i class="bi bi-globe"></i></div>
+          <div>
+            <div class="stat-dark-number">75+</div>
+            <div class="stat-dark-label">Countries Served</div>
+          </div>
+        </div>
+
+        <div class="stat-dark-item">
+          <div class="stat-dark-icon"><i class="bi bi-shield-check"></i></div>
+          <div>
+            <div class="stat-dark-number">99%</div>
+            <div class="stat-dark-label">Customer Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products for Every Business Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="mb-4">
+        <h2 class="section-title">Products for Every Business</h2>
+      </div>
+
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3" id="popularProductsGrid">
+        <!-- Injected dynamically via js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Network Sourcing Section -->
+  <section class="network-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+          <span class="hero-eyebrow">GLOBAL SOURCING</span>
+          <h2 class="display-6 fw-bold mb-3">Worldwide Network,<br>Local Expertise</h2>
+          <p class="text-muted mb-4">
+            Our global supplier network and experienced logistics partners help your business source quality products
+            with confidence and deliver them reliably on schedule.
+          </p>
+
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Trusted Manufacturing & OEM Partners</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> End-to-End Customs & Freight Solutions
+          </div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Live Container Tracking & Quality
+            Inspections</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Safe & Escrow Trade Assurance</div>
+
+          <a href="about.html" class="btn btn-dark-custom mt-3">Learn About Our Sourcing</a>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <img
+            src="https://wpthemes.themehunk.com/b2b-wholesale/wp-content/uploads/sites/385/2026/08/Untitled-design-1.png"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&auto=format&fit=crop&q=80'"
+            alt="Worldwide supplier network" class="rounded-4 shadow-sm">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Trusted by Businesses Worldwide</h2>
+        <p class="section-subtitle">See why retailers, distributors, and purchasing managers partner with us</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-quote">
+              "Their wholesale platform made bulk ordering simple and efficient. The sourcing team was responsive, and
+              every container shipment arrived exactly as expected."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
+                alt="Simon Bennett" class="testimonial-avatar">
+              <div>
+                <h5>Simon Bennett</h5>
+                <small>Retail Business Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-quote">
+              "Reliable supply service, transparent pricing tiers, and impressive global freight tracking make them our
+              primary supplier for electronics."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80"
+                alt="David Wilson" class="testimonial-avatar">
+              <div>
+                <h5>David Wilson</h5>
+                <small>Supply Chain Director</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-quote">
+              "The flexible MOQ, bulk discount structures, and private label support helped our retail chain scale
+              faster across 12 branch locations."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80"
+                alt="Emily Rodriguez" class="testimonial-avatar">
+              <div>
+                <h5>Emily Rodriguez</h5>
+                <small>Wholesale Purchasing Manager</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <span class="hero-eyebrow">NEED TO KNOW</span>
+          <h2 class="display-6 fw-bold mb-3">Have Questions?</h2>
+          <p class="text-muted mb-4">
+            Weâ€™ve answered the most common questions to help you source wholesale products with complete confidence and
+            security.
+          </p>
+          <a href="contact.html" class="btn-primary-custom">
+            <i class="bi bi-envelope"></i> Contact Sourcing Team
+          </a>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="accordion" id="wholesaleFaqAccordion">
+
+            <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  What is the minimum order quantity (MOQ)?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#wholesaleFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Our MOQs are tailored to support both emerging retailers and large distributors. Most items start at
+                  10 to 50 pieces, with larger discounts applied automatically for pallet and container volumes.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq2">
+                  How do I request a custom wholesale quote?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#wholesaleFaqAccordion">
+                <div class="accordion-body text-muted">
+                  You can click "Request a Quote" on any product or visit our Contact page. Provide your estimated order
+                  quantity, target delivery location, and custom branding requirements for an official quote within 24
+                  hours.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq3">
+                  Do you offer OEM and private label manufacturing?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#wholesaleFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! We offer custom logo printing, customized retail packaging, bespoke barcode tagging, and colorway
+                  customization across all apparel, electronics, and kitchenware lines.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq4">
+                  Which countries do you ship to?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#wholesaleFaqAccordion">
+                <div class="accordion-body text-muted">
+                  We ship globally to over 45 countries including North America, Europe, Asia, Australia, and the Middle
+                  East, with DDP (Delivered Duty Paid) shipping options available.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-1">Subscribe to our Wholesale Newsletter</h2>
+          <p class="text-secondary mb-0">Get weekly factory catalogue drops, bulk deals, and 20% off your sample order.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form ms-lg-auto"
+            onsubmit="event.preventDefault(); showToast('Thank you for subscribing to our wholesale updates!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Enter your business email..." required>
+            <button type="submit" class="btn-primary-custom" style="padding: 10px 20px;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%23ffffff\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo mb-3" style="filter: brightness(0) invert(1);">
+          <p class="text-secondary mb-4">Your trusted B2B marketplace for quality factory products, competitive
+            wholesale pricing, and reliable global freight sourcing.</p>
+          <div class="d-flex align-items-center gap-3">
+            <i class="bi bi-telephone-outbound text-warning fs-3"></i>
+            <div>
+              <small class="text-secondary d-block">Need Instant Assistance?</small>
+              <strong class="text-white fs-5">1800-8401-5011</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Account & Profile</a></li>
+            <li><a href="contact.html">Order Information</a></li>
+            <li><a href="contact.html">Returns & Claims</a></li>
+            <li><a href="about.html">Shipping & Delivery</a></li>
+            <li><a href="contact.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">For Business</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Become a Supplier</a></li>
+            <li><a href="shop.html">Wholesale Pricing</a></li>
+            <li><a href="contact.html">Request a Custom Quote</a></li>
+            <li><a href="about.html">OEM & Private Label</a></li>
+            <li><a href="about.html">Trade Assurance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Quick Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=electronics">Consumer Electronics</a></li>
+            <li><a href="shop.html?category=fashion-apparel">Apparel & Textiles</a></li>
+            <li><a href="shop.html?category=home-kitchen">Kitchen & Homeware</a></li>
+            <li><a href="shop.html?category=beauty-personal-care">Personal Care & Beauty</a></li>
+            <li><a href="shop.html?category=industrial-supplies">Industrial Machinery</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        Copyright Â© 2026 B2B Wholesale. All rights reserved. Built with HTML, CSS, JS & Bootstrap 5.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Slide-over Drawer -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Wholesale Cart</h3>
+      <button class="btn btn-sm btn-outline-secondary" onclick="closeCartDrawer()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div id="cartDrawerBody" class="cart-drawer-body">
+      <!-- Injected via app.js -->
+    </div>
+    <div id="cartDrawerFooter" class="cart-drawer-footer" style="display: none;">
+      <div class="cart-subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotalAmount">$0.00</span>
+      </div>
+      <a href="cart.html" class="btn-primary-custom w-100 justify-content-center mb-2">
+        <i class="bi bi-cart-check"></i> View Full Cart & Checkout
+      </a>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal (ThemeHunk Wholesale Design) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered qv-modal-dialog">
+      <div class="modal-content border-0 qv-modal-card">
+        <!-- Close Button (Top-Right 'âœ•') -->
+        <button type="button" class="qv-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="modal-body p-0">
+          <div class="row g-0 align-items-center">
+            <!-- Left Column: Product Image Gallery & Slider -->
+            <div class="col-md-6 qv-gallery-col">
+              <div class="qv-slider-container" id="qvSliderContainer">
+                <div class="qv-slider-track" id="qvSliderTrack"></div>
+              </div>
+              <!-- Dots Indicator: â— â—‹ â—‹ â—‹ -->
+              <div class="qv-dots" id="qvDots"></div>
+            </div>
+
+            <!-- Right Column: Product Info & Actions -->
+            <div class="col-md-6 qv-info-col">
+              <!-- Brand/Vendor -->
+              <div class="qv-brand" id="qvBrand">HOMETECH</div>
+
+              <!-- Product Title -->
+              <h2 class="qv-title" id="qvTitle">Office Chair</h2>
+
+              <!-- Price -->
+              <div class="qv-price" id="qvPrice">$299.00</div>
+
+              <!-- Meta Data: SKU & Categories -->
+              <div class="qv-meta-list">
+                <div class="qv-meta-item">
+                  <span class="qv-meta-label">SKU:</span>
+                  <span class="qv-meta-value" id="qvSku">Off-321</span>
+                </div>
+                <div class="qv-meta-item">
+                  <span class="qv-meta-label">Categories:</span>
+                  <span class="qv-meta-value" id="qvCategories">Electronics , Office Supplies</span>
+                </div>
+              </div>
+
+              <!-- Social Share Icons -->
+              <div class="qv-share-row">
+                <span class="qv-share-label">Share:</span>
+                <div class="qv-share-icons">
+                  <a href="#" class="qv-share-icon" title="Share on Facebook"
+                    onclick="event.preventDefault(); window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');"><i
+                      class="bi bi-facebook"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on X"
+                    onclick="event.preventDefault(); window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');"><i
+                      class="bi bi-twitter-x"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on Pinterest"
+                    onclick="event.preventDefault(); window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank');"><i
+                      class="bi bi-pinterest"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on LinkedIn"
+                    onclick="event.preventDefault(); window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank');"><i
+                      class="bi bi-linkedin"></i></a>
+                  <a href="#" class="qv-share-icon" title="Copy Link"
+                    onclick="event.preventDefault(); copyProductLink();"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+
+              <!-- Accordions: Short Description & Description -->
+              <div class="qv-accordion-section">
+                <!-- Accordion 1: Short Description (Open by default) -->
+                <div class="qv-accordion-item">
+                  <button type="button" class="qv-accordion-header" onclick="toggleQvAccordion(this)">
+                    <span>Short Description</span>
+                    <i class="bi bi-dash qv-accordion-icon"></i>
+                  </button>
+                  <div class="qv-accordion-body show" id="qvShortDesc">
+                    Facilisis netus leo maximus bibendum nascetur vel cras. Justo orci urna curae ligula potenti
+                    inceptos. Tortor nibh nisi nascetur porttitor fames.
+                  </div>
+                </div>
+
+                <!-- Accordion 2: Description (Collapsed by default) -->
+                <div class="qv-accordion-item">
+                  <button type="button" class="qv-accordion-header" onclick="toggleQvAccordion(this)">
+                    <span>Description</span>
+                    <i class="bi bi-plus qv-accordion-icon"></i>
+                  </button>
+                  <div class="qv-accordion-body" id="qvFullDesc">
+                    Premium commercial wholesale merchandise with high-durability finish, tested for commercial and
+                    institutional environments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quantity Stepper & Add to Cart -->
+              <div class="qv-action-row">
+                <div class="qv-stepper">
+                  <button type="button" class="qv-stepper-btn" onclick="stepQvQty(-1)"
+                    title="Decrease quantity">âˆ’</button>
+                  <input type="number" id="qvQuantity" class="qv-stepper-input" value="1" min="1" readonly>
+                  <button type="button" class="qv-stepper-btn" onclick="stepQvQty(1)"
+                    title="Increase quantity">+</button>
+                </div>
+                <button type="button" id="qvAddToCartBtn" class="qv-add-to-cart-btn">
+                  <i class="bi bi-bag"></i> ADD TO CART
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main Application Script -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "b2b-wholesale-store",
+  "version": "1.0.0",
+  "description": "B2B Wholesale eCommerce Store built with HTML, CSS, JavaScript, Bootstrap 5 and JSON",
+  "scripts": {
+    "dev": "serve -l 3000 .",
+    "start": "serve -l 3000 .",
+    "serve": "serve -l 3000 ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

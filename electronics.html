@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics â€” B2B Wholesale</title>
+  <meta name="description"
+    content="Wholesale electronics: smart TVs, earbuds, speakers, smartwatches and more at factory pricing.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar (Single Clean Header like Home Page) -->
+  <nav class="nav-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%230f172a\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo">
+        </a>
+
+        <!-- Center: Desktop Menu Links -->
+        <ul class="nav-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="electronics.html" class="active">Electronics</a></li>
+          <li><a href="shop.html?category=fashion-apparel">Fashion & Apparel</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <!-- Right: Profile & Cart Actions -->
+        <div class="header-actions">
+          <a href="contact.html" class="header-action-btn d-none d-sm-flex" title="Customer Account">
+            <i class="bi bi-person"></i>
+            <!-- <span class="d-none d-xl-inline">Account</span> -->
+          </a>
+          <button class="header-action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+            <span class="cart-icon-wrap">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge" style="display: none;">0</span>
+            </span>
+            <!-- <span class="d-none d-xl-inline">Your Cart</span> -->
+            <span class="cart-header-amount" style="display: none;"></span>
+          </button>
+          <button class="btn btn-outline-dark d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mobileNav">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Collapsible Menu -->
+      <div class="collapse d-lg-none py-3 border-top" id="mobileNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="electronics.html">Electronics</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="shop.html?category=fashion-apparel">Fashion &
+              Apparel</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- Page Header -->
+  <div class="container pt-4">
+    <h1 class="fw-bold mb-1">Electronics</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0 small text-muted">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Electronics</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Electronics Content -->
+  <div class="container py-4 pb-5">
+    <div class="row g-4">
+      <!-- Sidebar Filters -->
+      <aside class="col-lg-3">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h4 class="fw-bold mb-0">Filters</h4>
+          <button class="btn btn-sm btn-link text-muted p-0 text-decoration-none" onclick="resetElectronicsFilters()" title="Reset Filters">
+            <i class="bi bi-x-lg fs-6"></i>
+          </button>
+        </div>
+
+        <div class="price-filter-widget mb-4">
+          <h6 class="fw-bold mb-3 text-dark">Price</h6>
+          
+          <div class="themehunk-price-slider-wrap mb-3">
+            <div class="slider-track-bg"></div>
+            <div class="slider-track-highlight" id="priceTrackHighlight"></div>
+            <input type="range" class="th-range-thumb" id="priceMin" oninput="onMinSliderInput(this.value)">
+            <input type="range" class="th-range-thumb" id="priceMax" oninput="onMaxSliderInput(this.value)">
+          </div>
+
+          <div class="price-input-boxes mb-3">
+            <div class="price-input-field-wrap">
+              <span class="currency-sign">$</span>
+              <input type="number" id="priceMinBox" class="price-box-input" onchange="onMinBoxChange(this.value)" placeholder="Min">
+            </div>
+            <div class="price-input-field-wrap mt-2">
+              <span class="currency-sign">$</span>
+              <input type="number" id="priceMaxBox" class="price-box-input" onchange="onMaxBoxChange(this.value)" placeholder="Max">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-outline-dark btn-sm w-100 mb-4" onclick="resetElectronicsFilters()">
+          <i class="bi bi-arrow-counterclockwise"></i> Reset filters
+        </button>
+
+        <div class="card border p-3 rounded-3 shadow-sm bg-light">
+          <h6 class="fw-bold mb-2">Need Custom Bulk Orders?</h6>
+          <p class="small text-muted mb-3">Custom branding, OEM tooling or volume quotes above 500 units?</p>
+          <a href="contact.html" class="btn btn-dark btn-sm w-100"><i class="bi bi-file-earmark-text"></i> Inquire
+            Wholesale</a>
+        </div>
+      </aside>
+
+      <!-- Products -->
+      <main class="col-lg-9">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 p-3 bg-light rounded-3 border">
+          <div class="small text-muted" id="resultsCount">Loading electronics...</div>
+          <div class="d-flex align-items-center gap-2">
+            <label class="small fw-bold text-muted text-nowrap" for="sortSelect">Sort By:</label>
+            <select class="form-select form-select-sm" id="sortSelect" onchange="applyElectronics()">
+              <option value="default">Default sorting</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3" id="electronicsGrid"><!-- shared renderProducts() se aata hai (js/app.js) --></div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="images/logo.png"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 44\' fill=\'none\'><rect width=\'36\' height=\'36\' rx=\'8\' fill=\'%23cf9c38\'/><text x=\'44\' y=\'26\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'800\' fill=\'%23ffffff\'>B2B<tspan fill=\'%23cf9c38\'>STORE</tspan></text></svg>'"
+            alt="B2B Wholesale" class="site-logo mb-3" style="filter: brightness(0) invert(1);">
+          <p class="text-secondary mb-4">Your trusted B2B marketplace for quality factory products, competitive
+            wholesale pricing, and reliable global freight sourcing.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Account & Profile</a></li>
+            <li><a href="contact.html">Order Information</a></li>
+            <li><a href="about.html">Shipping & Delivery</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">For Business</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Request Custom Quote</a></li>
+            <li><a href="about.html">OEM & Private Label</a></li>
+            <li><a href="about.html">Trade Assurance</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Contact Direct</h4>
+          <p class="text-secondary mb-1">Toll Free: 1800-8401-5011</p>
+          <p class="text-secondary">Email: sales@b2bwholesale.trade</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Copyright Â© 2026 B2B Wholesale. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Wholesale Cart</h3>
+      <button class="btn btn-sm btn-outline-secondary" onclick="closeCartDrawer()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div id="cartDrawerBody" class="cart-drawer-body"></div>
+    <div id="cartDrawerFooter" class="cart-drawer-footer" style="display: none;">
+      <div class="cart-subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotalAmount">$0.00</span>
+      </div>
+      <a href="cart.html" class="btn-primary-custom w-100 justify-content-center mb-2">
+        <i class="bi bi-cart-check"></i> View Full Cart & Checkout
+      </a>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal (ThemeHunk Wholesale Design) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered qv-modal-dialog">
+      <div class="modal-content border-0 qv-modal-card">
+        <!-- Close Button (Top-Right 'âœ•') -->
+        <button type="button" class="qv-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="modal-body p-0">
+          <div class="row g-0 align-items-center">
+            <!-- Left Column: Product Image Gallery & Slider -->
+            <div class="col-md-6 qv-gallery-col">
+              <div class="qv-slider-container" id="qvSliderContainer">
+                <div class="qv-slider-track" id="qvSliderTrack"></div>
+              </div>
+              <!-- Dots Indicator: â— â—‹ â—‹ â—‹ -->
+              <div class="qv-dots" id="qvDots"></div>
+            </div>
+
+            <!-- Right Column: Product Info & Actions -->
+            <div class="col-md-6 qv-info-col">
+              <!-- Brand/Vendor -->
+              <div class="qv-brand" id="qvBrand">HOMETECH</div>
+
+              <!-- Product Title -->
+              <h2 class="qv-title" id="qvTitle">Office Chair</h2>
+
+              <!-- Price -->
+              <div class="qv-price" id="qvPrice">$299.00</div>
+
+              <!-- Meta Data: SKU & Categories -->
+              <div class="qv-meta-list">
+                <div class="qv-meta-item">
+                  <span class="qv-meta-label">SKU:</span>
+                  <span class="qv-meta-value" id="qvSku">Off-321</span>
+                </div>
+                <div class="qv-meta-item">
+                  <span class="qv-meta-label">Categories:</span>
+                  <span class="qv-meta-value" id="qvCategories">Electronics , Office Supplies</span>
+                </div>
+              </div>
+
+              <!-- Social Share Icons -->
+              <div class="qv-share-row">
+                <span class="qv-share-label">Share:</span>
+                <div class="qv-share-icons">
+                  <a href="#" class="qv-share-icon" title="Share on Facebook" onclick="event.preventDefault(); window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on X" onclick="event.preventDefault(); window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on Pinterest" onclick="event.preventDefault(); window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" class="qv-share-icon" title="Share on LinkedIn" onclick="event.preventDefault(); window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank');"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" class="qv-share-icon" title="Copy Link" onclick="event.preventDefault(); copyProductLink();"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+
+              <!-- Accordions: Short Description & Description -->
+              <div class="qv-accordion-section">
+                <!-- Accordion 1: Short Description (Open by default) -->
+                <div class="qv-accordion-item">
+                  <button type="button" class="qv-accordion-header" onclick="toggleQvAccordion(this)">
+                    <span>Short Description</span>
+                    <i class="bi bi-dash qv-accordion-icon"></i>
+                  </button>
+                  <div class="qv-accordion-body show" id="qvShortDesc">
+                    Facilisis netus leo maximus bibendum nascetur vel cras. Justo orci urna curae ligula potenti inceptos. Tortor nibh nisi nascetur porttitor fames.
+                  </div>
+                </div>
+
+                <!-- Accordion 2: Description (Collapsed by default) -->
+                <div class="qv-accordion-item">
+                  <button type="button" class="qv-accordion-header" onclick="toggleQvAccordion(this)">
+                    <span>Description</span>
+                    <i class="bi bi-plus qv-accordion-icon"></i>
+                  </button>
+                  <div class="qv-accordion-body" id="qvFullDesc">
+                    Premium commercial wholesale merchandise with high-durability finish, tested for commercial and institutional environments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quantity Stepper & Add to Cart -->
+              <div class="qv-action-row">
+                <div class="qv-stepper">
+                  <button type="button" class="qv-stepper-btn" onclick="stepQvQty(-1)" title="Decrease quantity">âˆ’</button>
+                  <input type="number" id="qvQuantity" class="qv-stepper-input" value="1" min="1" readonly>
+                  <button type="button" class="qv-stepper-btn" onclick="stepQvQty(1)" title="Increase quantity">+</button>
+                </div>
+                <button type="button" id="qvAddToCartBtn" class="qv-add-to-cart-btn">
+                  <i class="bi bi-bag"></i> ADD TO CART
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Sirf electronics products: shop wale hi shared card (renderProducts) use hota hai
+    let electronicsList = [];
+    const isElectronics = p => (p.categorySlug || '') === 'electronics' || String(p.category || '').toLowerCase().includes('electronic');
+
+    function initElectronics() {
+      electronicsList = allProducts.filter(isElectronics);
+      const prices = electronicsList.map(p => Number(p.price) || 0);
+      const lo = Math.floor(Math.min(...prices));
+      const hi = Math.ceil(Math.max(...prices));
+      
+      const minSlider = document.getElementById('priceMin');
+      const maxSlider = document.getElementById('priceMax');
+      const minBox = document.getElementById('priceMinBox');
+      const maxBox = document.getElementById('priceMaxBox');
+
+      if (minSlider && maxSlider) {
+        minSlider.min = lo;
+        minSlider.max = hi;
+        maxSlider.min = lo;
+        maxSlider.max = hi;
+      }
+      if (minBox && maxBox) {
+        minBox.min = lo;
+        minBox.max = hi;
+        maxBox.min = lo;
+        maxBox.max = hi;
+      }
+      resetElectronicsFilters();
+    }
+
+    function updateSliderProgress() {
+      const minSlider = document.getElementById('priceMin');
+      const maxSlider = document.getElementById('priceMax');
+      const highlight = document.getElementById('priceTrackHighlight');
+      const minBox = document.getElementById('priceMinBox');
+      const maxBox = document.getElementById('priceMaxBox');
+
+      if (!minSlider || !maxSlider) return;
+
+      const minVal = parseFloat(minSlider.value);
+      const maxVal = parseFloat(maxSlider.value);
+      const rangeMin = parseFloat(minSlider.min) || 0;
+      const rangeMax = parseFloat(minSlider.max) || 100;
+      const rangeDiff = (rangeMax - rangeMin) || 1;
+
+      const leftPercent = ((minVal - rangeMin) / rangeDiff) * 100;
+      const rightPercent = 100 - (((maxVal - rangeMin) / rangeDiff) * 100);
+
+      if (highlight) {
+        highlight.style.left = Math.max(0, Math.min(100, leftPercent)) + '%';
+        highlight.style.right = Math.max(0, Math.min(100, rightPercent)) + '%';
+      }
+
+      if (minBox && document.activeElement !== minBox) {
+        minBox.value = minVal;
+      }
+      if (maxBox && document.activeElement !== maxBox) {
+        maxBox.value = maxVal;
+      }
+    }
+
+    function onMinSliderInput(val) {
+      const minSlider = document.getElementById('priceMin');
+      const maxSlider = document.getElementById('priceMax');
+      if (parseFloat(val) > parseFloat(maxSlider.value)) {
+        minSlider.value = maxSlider.value;
+      }
+      updateSliderProgress();
+      applyElectronics();
+    }
+
+    function onMaxSliderInput(val) {
+      const minSlider = document.getElementById('priceMin');
+      const maxSlider = document.getElementById('priceMax');
+      if (parseFloat(val) < parseFloat(minSlider.value)) {
+        maxSlider.value = minSlider.value;
+      }
+      updateSliderProgress();
+      applyElectronics();
+    }
+
+    function onMinBoxChange(val) {
+      const minSlider = document.getElementById('priceMin');
+      const maxSlider = document.getElementById('priceMax');
+      let num = parseFloat(val);
+      if (isNaN(num)) num = parseFloat(minSlider.min);
+      num = Math.max(parseFloat(minSlider.min), Math.min(num, parseFloat(maxSlider.value)));
+      minSlider.value = num;
+      updateSliderProgress();
+      applyElectronics();
+    }
+
+    function onMaxBoxChange(val) {
+      const minSlider = document.getElementById('priceMin');
+      const maxSlider = document.getElementById('priceMax');
+      let num = parseFloat(val);
+      if (isNaN(num)) num = parseFloat(maxSlider.max);
+      num = Math.min(parseFloat(maxSlider.max), Math.max(num, parseFloat(minSlider.value)));
+      maxSlider.value = num;
+      updateSliderProgress();
+      applyElectronics();
+    }
+
+    function resetElectronicsFilters() {
+      const mn = document.getElementById('priceMin');
+      const mx = document.getElementById('priceMax');
+      if (mn && mx) {
+        mn.value = mn.min;
+        mx.value = mx.max;
+      }
+      const sortSelect = document.getElementById('sortSelect');
+      if (sortSelect) sortSelect.value = 'default';
+      updateSliderProgress();
+      applyElectronics();
+    }
+
+    function applyElectronics() {
+      const mn = document.getElementById('priceMin');
+      const mx = document.getElementById('priceMax');
+      if (!mn || !mx) return;
+
+      const minVal = parseFloat(mn.value);
+      const maxVal = parseFloat(mx.value);
+
+      let list = electronicsList.filter(p => p.price >= minVal && p.price <= maxVal);
+      const s = document.getElementById('sortSelect').value;
+      if (s === 'price-asc') list.sort((a, b) => a.price - b.price);
+      else if (s === 'price-desc') list.sort((a, b) => b.price - a.price);
+      else if (s === 'name-asc') list.sort((a, b) => a.name.localeCompare(b.name));
+
+      renderProducts('electronicsGrid', list);
+      document.getElementById('resultsCount').textContent =
+        list.length === electronicsList.length ? `Showing all ${list.length} results` : `Showing ${list.length} of ${electronicsList.length} results`;
+    }
+
+    // app.js ka data load hone ka wait
+    const waitData = setInterval(() => {
+      if (typeof allProducts !== 'undefined' && allProducts.length) {
+        clearInterval(waitData);
+        initElectronics();
+      }
+    }, 50);
+  </script>
+</body>
+
+</html>
